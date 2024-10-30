@@ -75,13 +75,33 @@ public class Main {
                                 new MataKuliah("IF101", 4,"MatIF")
                                           , Arrays.asList (new PresensiStaff(new Date(),Status.HADIR, "08.00"))
                                          )
-                                  )
+                                  ), 10
                            );
                            
                 dosen1.print();
 
                 System.out.println("\n\n\n\n MODUL 4 NOMOR 7 PRINT GAJI \n\n");
 
-        }
+                        DosenHonorer dosenHonor1 = new DosenHonorer("Pak Dosen Honor Hery", "JL Pasko", "08-12-11", "09882311423", "1123001", "DKV",
+                         Arrays.asList(
+                                new MatkulAjar(
+                                        new MataKuliah("K001", 3, "Kapsel")
+                                        ,Arrays.asList(new PresensiStaff(new Date(),Status.HADIR , targetNIM)))),
+                                                  10, 10000);
+                
+                        dosenHonor1.printGaji();
+
+                        DosenTetap dosentetap1 = new DosenTetap("Pak Dosen Tetap Jono", "JL imas", "01-12-11", "29882311423", "2123001", "SI",
+                        Arrays.asList(
+                               new MatkulAjar(
+                                       new MataKuliah("K021", 3, "ALGO")
+                                       ,Arrays.asList(new PresensiStaff(new Date(),Status.HADIR , targetNIM)))),
+                                                 10, 130000);
+        
+                dosentetap1.printGaji();
+
+                        Karyawan karyawan1 = new Karyawan("Pak Karyawan", "JL imas", "01-12-11", "29882311423", "2123001",500000,Arrays.asList(new Presensi(new Date(), Status.HADIR)));
+                        karyawan1.printGaji();
+        }       
 
 }

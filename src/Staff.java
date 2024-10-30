@@ -22,5 +22,6 @@ abstract public class Staff extends User{
         System.out.println("NIK : "+NIK);
       }
 
+      public abstract void printGaji();
 
 }
