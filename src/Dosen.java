@@ -2,7 +2,7 @@ import java.util.List;
 
  public class Dosen extends Staff {
     private String departemen;
-    private List<String> mataKuliahDiajar;
+    private List<MatkulAjar> mataKuliahDiajar;
 
     
   
@@ -10,7 +10,7 @@ import java.util.List;
 
 
     public Dosen(String nama, String alamat, String ttl, String telepon, String NIK, String departemen,
-            List<String> mataKuliahDiajar) {
+            List<MatkulAjar> mataKuliahDiajar) {
         super(nama, alamat, ttl, telepon, NIK);
         this.departemen = departemen;
         this.mataKuliahDiajar = mataKuliahDiajar;
@@ -39,7 +39,7 @@ import java.util.List;
 
 
 
-    public List<String> getMataKuliahDiajar() {
+    public List<MatkulAjar> getMataKuliahDiajar() {
         return mataKuliahDiajar;
     }
 
@@ -48,7 +48,7 @@ import java.util.List;
 
 
 
-    public void setMataKuliahDiajar(List<String> mataKuliahDiajar) {
+    public void setMataKuliahDiajar(List<MatkulAjar> mataKuliahDiajar) {
         this.mataKuliahDiajar = mataKuliahDiajar;
     }
 
@@ -58,8 +58,19 @@ import java.util.List;
 
 
     @Override
-    public void login() {
-        System.out.println("Dosen logged in with NIK: " + getNIK());
+   public void print(){
+    System.out.println("Departemen : "+departemen);
+    for (MatkulAjar matkulAjarPrint : mataKuliahDiajar) {
+        System.out.println("kode : "+ matkulAjarPrint.getMatkul().getKode());
+        System.out.println("nama : "+matkulAjarPrint.getMatkul().getNama());
+        System.out.println("sks : " +matkulAjarPrint.getMatkul().getSKS());
+        System.out.println("= = = PRESENSI = = =");
+       for ( PresensiStaff presensi: matkulAjarPrint.getPresensiStaffList()) {
+            System.out.println("Tanggal : "+presensi.getTanggal());
+            System.out.println("Status : "+presensi.getStatus());
+            System.out.println("Jam : "+presensi.getJam());
+       }
     }
+   }
 
 }

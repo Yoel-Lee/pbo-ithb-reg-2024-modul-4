@@ -26,7 +26,7 @@ public class Main {
                 mhsS1.print();
 
                 // Modul 4 no 3
-                System.out.println("\n\n MODUL 4 NO 3 & 4 ,  RATA RATA ANAK IF  \n\n");
+                System.out.println("\n\n MODUL 4 NO 3 - 5 , PRINT RATA RATA ANAK IF , LULUS/TIDAK ,  MATKUL APA & TOTAL PRESENSI \n\n");
                 String targetJurusan = "IF";
                 double totalNilai = 0;
                 int jumlahMahasiswa = 0;
@@ -65,6 +65,22 @@ public class Main {
                                 mahasiswaFor2.printMatkul();
                         }
                 }
+                System.out.println("\n\n\n\n MODUL 4 NOMOR 6 PRINT DOSEN \n\n");
+                
+                // modul 4 no 6
+               
+                Dosen dosen1 = new Dosen("Ko Dion", "Jl rajawali", "02-10-11", "082213444232", "1123009", "IF",
+                Arrays.asList(
+                        new MatkulAjar(
+                                new MataKuliah("IF101", 4,"MatIF")
+                                          , Arrays.asList (new PresensiStaff(new Date(),Status.HADIR, "08.00"))
+                                         )
+                                  )
+                           );
+                           
+                dosen1.print();
+
+                System.out.println("\n\n\n\n MODUL 4 NOMOR 7 PRINT GAJI \n\n");
 
         }
 

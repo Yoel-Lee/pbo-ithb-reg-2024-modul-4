@@ -18,8 +18,8 @@ abstract public class Staff extends User{
   
 
       @Override
-      public void login(){
-        System.out.println("Staff logged in, NIK : "+ NIK);
+      public void print(){
+        System.out.println("NIK : "+NIK);
       }
 
 
